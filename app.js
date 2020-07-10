@@ -11,14 +11,14 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   var calculatedSum = a + b;
   var textualStatement = 'The sum of ' + a + ' and ' + b + ' is ' + calculatedSum + '.';
-  var arrayToReturn = [ calculatedSum, textualStatement];
+  var arrayToReturn = [calculatedSum, textualStatement];
 
   // console.log(calculatedSum);
   // console.log(textualStatement);
   // console.log(textualStatement.length);
   // console.log('arrayToReturn:',arrayToReturn);
   // console.log(typeof calculatedSum);
-  // console.log('Function running.');
+  // console.log('The sum function is almost finished running.');
 
   return arrayToReturn;
 }
@@ -39,11 +39,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+  var calculatedProduct = a * b;
+  var textualStatement = 'The product of ' + a + ' and ' + b + ' is ' + calculatedProduct + '.';
+  var arrayToReturn = [calculatedProduct, textualStatement];
 
+  // console.log(calculatedProduct);
+  // console.log(textualStatement);
+  // console.log(textualStatement.length);
+  // console.log('arrayToReturn:',arrayToReturn);
+  // console.log(typeof calculatedProduct);
+ 
+  return arrayToReturn;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
