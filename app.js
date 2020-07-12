@@ -110,12 +110,38 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var calculatedSumOfSumArray = 0;
+  var textualStatementOfSumArray = '';
+  // console.log(sumArr);
 
+  for (var i = 0; i < sumArr.length; i++) {
+    // console.log('For loop pass',i,'calculated start value is:',calculatedSumOfSumArray);
+    // console.log('Value to add is:',sumArr[i]);
+    calculatedSumOfSumArray = sum(calculatedSumOfSumArray,sumArr[i])[0];
+    textualStatementOfSumArray += sumArr[i] + ',';
+    // console.log('For loop pass',i,'calculated end value is:',calculatedSumOfSumArray);
+  }
+
+  textualStatementOfSumArray = textualStatementOfSumArray.substring(0,textualStatementOfSumArray.length - 1);
+  // I had errantly been adding a comma after the last array number listed in the textual statement because of the for loop.  To have the textual statment match the desired result, I needed to remove that last comma.  I considered adding an if statement internal to the for loop to see if it was the last pass of the for loop.  If it was, I could skip adding the comma.  However, that would've been a couple additional lines of code.  Instead, I assumed there had to be a function out there to subtract the end off of a string.  My googling revealed the .substring ?property? of strings that could be used to extract only the porition of the string I wanted.  I then reassigned that subsection to the string variable.  Thanks to TechieDelight for helping me figure out how to do this:  https://www.techiedelight.com/remove-last-character-string-javascript/
+
+  textualStatementOfSumArray += ' was passed in as an array of numbers, and ' + calculatedSumOfSumArray + ' is their sum.';
+
+  //*** Troubleshooting console logs:  ***
+  // console.log('*** The sumArray function console logs are below. ***');
+  // console.log(calculatedSumOfSumArray);
+  // console.log(textualStatementOfSumArray);
+  // console.log('arrayToReturn:',arrayToReturnOfSumArray);
+  // // console.log(typeof calculatedSum);
+  // console.log('*** End sumArray function logs. ***');
+  
+  var arrayToReturnOfSumArray = [calculatedSumOfSumArray, textualStatementOfSumArray];
+  return arrayToReturnOfSumArray;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
