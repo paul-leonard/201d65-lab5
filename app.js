@@ -157,11 +157,37 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var calculatedProductOfProductArray = 1;
+  var textualStatementOfProductArray = 'The numbers ';
+  // console.log(multArr);
 
+  for (var i = 0; i < multArr.length; i++) {
+    // console.log('For loop pass',i,'calculated start value is:',calculatedProductOfProductArray);
+    // console.log('Value to multiply is:',multArr[i]);
+    calculatedProductOfProductArray = multiply(calculatedProductOfProductArray,multArr[i])[0];
+    textualStatementOfProductArray += multArr[i] + ',';
+    // console.log('For loop pass',i,'calculated end value is:',calculatedProductOfProductArray);
+  }
+
+  textualStatementOfProductArray = textualStatementOfProductArray.substring(0,textualStatementOfProductArray.length - 1);
+  // Used in previous function.  Same source: https://www.techiedelight.com/remove-last-character-string-javascript/
+
+  textualStatementOfProductArray += ' have a product of ' + calculatedProductOfProductArray + '.';
+
+  //*** Troubleshooting console logs:  ***
+  // console.log('*** The ProductArray function console logs are below. ***');
+  // console.log(calculatedProductOfProductArray);
+  // console.log(textualStatementOfProductArray);
+  // console.log('arrayToReturn:',arrayToReturnOfProductArray);
+  // console.log(typeof calculatedProduct);
+  // console.log('*** End ProductArray function logs. ***');
+  
+  var arrayToReturnOfProductArray = [calculatedProductOfProductArray, textualStatementOfProductArray];
+  return arrayToReturnOfProductArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -185,10 +211,36 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  var calculatedProductOfProductArray = 1;
+  var textualStatementOfProductArray = 'The numbers ';
+  // console.log(dynamicArray);
 
+  for (var i = 0; i < dynamicArray.length; i++) {
+    // console.log('For loop pass',i,'calculated start value is:',calculatedProductOfProductArray);
+    // console.log('Value to multiply is:',dynamicArray[i]);
+    calculatedProductOfProductArray = multiply(calculatedProductOfProductArray,dynamicArray[i])[0];
+    textualStatementOfProductArray += dynamicArray[i] + ',';
+    // console.log('For loop pass',i,'calculated end value is:',calculatedProductOfProductArray);
+  }
+
+  textualStatementOfProductArray = textualStatementOfProductArray.substring(0,textualStatementOfProductArray.length - 1);
+  // Used in previous function.  Same source: https://www.techiedelight.com/remove-last-character-string-javascript/
+
+  textualStatementOfProductArray += ' have a product of ' + calculatedProductOfProductArray + '.';
+
+  //*** Troubleshooting console logs:  ***
+  // console.log('*** The ProductArray function console logs are below. ***');
+  // console.log(calculatedProductOfProductArray);
+  // console.log(textualStatementOfProductArray);
+  // console.log('arrayToReturn:',arrayToReturnOfProductArray);
+  // console.log(typeof calculatedProduct);
+  // console.log('*** End ProductArray function logs. ***');
+  
+  var arrayToReturnOfProductArray = [calculatedProductOfProductArray, textualStatementOfProductArray];
+  return arrayToReturnOfProductArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
